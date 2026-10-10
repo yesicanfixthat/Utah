@@ -196,7 +196,19 @@
         <div class="who">Christina M.<span>Google review &middot; Florida &middot; July 2026</span></div>
       </article>
     </div>
+    <div id="utahReviews" hidden style="margin-top:28px"><div class="eyebrow">Utah customers</div><h3 style="font-size:28px;text-transform:uppercase;margin:4px 0 14px">Reviews from right here at home</h3><div class="reviews" id="utahReviewList"></div></div>
     <div class="cta-row"><a class="btn" href="https://g.page/r/CeSg-DtFi0_ZEAI/review" target="_blank" rel="noopener">Leave us a Google review</a></div>
+    <script>
+    (function(){
+      var esc=function(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+      fetch("https://yhcinsqiqernsqussjgb.supabase.co/functions/v1/office-reviews",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"list"})})
+        .then(function(r){return r.json()}).then(function(d){var L=(d&&d.reviews)||[];if(!L.length)return;
+          document.getElementById("utahReviewList").innerHTML=L.slice(0,12).map(function(r){var when=new Date(r.at).toLocaleDateString("en-US",{month:"long",year:"numeric"});
+            return '<article class="review"><div class="stars" role="img" aria-label="'+r.stars+' out of 5 stars">'+"&#9733;".repeat(r.stars)+"&#9734;".repeat(5-r.stars)+'</div><blockquote><p>&ldquo;'+esc(r.text)+'&rdquo;</p></blockquote><div class="who">'+esc(r.name)+'<span>Review on our website'+(r.town?" &middot; "+esc(r.town):"")+" &middot; "+when+'</span></div></article>'}).join("");
+          document.getElementById("utahReviews").hidden=false})
+        .catch(function(){});
+    })();
+    </script>
   </div>
 </section>
 
@@ -285,5 +297,6 @@
   </div>
 </footer>
 <script src="site.js" defer></script>
+<script data-goatcounter="https://icanfixthatut.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
