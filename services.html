@@ -229,5 +229,14 @@
 
 <script src="site.js" defer></script>
 <script data-goatcounter="https://icanfixthatut.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+/* Counts taps on Call, Text, Email and Quote buttons in GoatCounter. No personal information. */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a');if(!a||!window.goatcounter||!window.goatcounter.count)return;
+  var h=(a.getAttribute('href')||'').toLowerCase(),n='';
+  if(h.indexOf('tel:')===0)n='tap-call';else if(h.indexOf('sms:')===0)n='tap-text';else if(h.indexOf('mailto:')===0)n='tap-email';else if(h.indexOf('request.html')>-1)n='tap-quote';
+  if(n)window.goatcounter.count({path:n,title:(a.textContent||'').trim().slice(0,60),event:true});
+},true);
+</script>
 </body>
 </html>
