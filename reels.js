@@ -8,7 +8,8 @@
     { file: 'fixthat-reel-clean-tools-tip.mp4',       title: 'Clean your tools',          topic: 'Drywall' },
     { file: 'fixthat-reel-prep-before-you-patch.mp4', title: 'Prep before you patch',     topic: 'Drywall' },
     { file: 'fixthat-reel-mix-it-outside.mp4',        title: 'Mix it outside',            topic: 'Drywall' },
-    { file: 'fixthat-reel-thin-coats-win.mp4',        title: 'Thin coats win',            topic: 'Drywall' }
+    { file: 'fixthat-reel-thin-coats-win.mp4',        title: 'Thin coats win',            topic: 'Drywall' },
+    { file: 'fixthat-first-lesson-reel-nov-2026.mp4', title: 'Our first lesson: a new light', topic: 'Electrical' }
   ];
 
   function shuffle(a) {
