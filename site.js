@@ -21,3 +21,13 @@
   }); });
   dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
 })();
+
+// Proud sponsor line, added to the footer on every page
+(function () {
+  var wrap = document.querySelector('footer .wrap');
+  if (!wrap || wrap.querySelector('.proud-sponsor')) return;
+  var s = document.createElement('span');
+  s.className = 'proud-sponsor';
+  s.innerHTML = 'Proud sponsor of <a href="https://ogdenvalleyevent.com/" target="_blank" rel="noopener">Ogden Valley Info &amp; Events</a> &middot; Proud sponsor of <a href="https://www.facebook.com/groups/soulfulwib" target="_blank" rel="noopener">Soulful Women</a>';
+  wrap.appendChild(s);
+})();
